@@ -12,3 +12,7 @@
 *-env
 *-env.*
 *-env/
+
+# Ignorar archivos .env
+.env
+.env.*
