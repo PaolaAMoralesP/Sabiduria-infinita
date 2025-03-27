@@ -55,4 +55,12 @@ public class Book {
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
+        //getter
+        public String getGenre(){
+            return this.genre;
+        }
+    //setter
+        public void setGenre(String genre) {
+            this.genre = genre;
+        }
 }
