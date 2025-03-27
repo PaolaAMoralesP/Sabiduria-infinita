@@ -8,7 +8,7 @@ public class Book {
     private String isbn;
     private String genre;
 
-    public Book(int id, String title, String author, String description, String isbn, String genre){
+    public Book(String title, String author, String description, String isbn, String genre){
         this.title = title;
         this.author = author;
         this.description = description;
