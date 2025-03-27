@@ -12,5 +12,6 @@ public class App
     {
         System.out.println( "Sabiduria-infinita" );
         DBManager.initConnection();
+        DBManager.closeConnection();
     }
 }
