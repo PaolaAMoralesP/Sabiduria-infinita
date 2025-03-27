@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBManager {
-    private static final String URL = "jdbc:postgresql://localhost:5432/sabiduria-infinita";
+    private static final String URL = "jdbc:postgresql://localhost/sabiduria-infinita";
     private static final String USER = "postgres";
-    private static final String PASS = "mWFyaWE=";
+    private static final String PASS = "";
 
     private static Connection connection;
 
