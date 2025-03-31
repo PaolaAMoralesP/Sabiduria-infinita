@@ -25,7 +25,7 @@ public class App
         BookDAO model = new BookDAO();
         BookController bookController = new BookController(model);
         BookView bookView = new BookView(bookController);
-        MenuView.showMenu();
+        MenuView.showMenu(bookView);
         bookView.createBook();
     }
 
