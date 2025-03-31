@@ -1,5 +1,5 @@
 package com.mvc.controller;
-
+import com.mvc.model.Book;
 import com.mvc.model.BookDAO;
 
 public class BookController {
