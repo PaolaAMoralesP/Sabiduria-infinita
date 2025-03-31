@@ -1,5 +1,6 @@
 package com.mvc;
 
+import com.mvc.controller.BookController;
 // import com.mvc.config.DBManager;
 import com.mvc.model.Book;
 import com.mvc.model.BookDAO;
@@ -16,11 +17,12 @@ public class App
         // DBManager.initConnection();
         // DBManager.closeConnection();
 
-        Book firstBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", "A novel about the American Dream", "9780743273565", "Fiction");
-        System.out.println(firstBook.getId());
+        //Book firstBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", "A novel about the American Dream", "9780743273565", "Fiction");
+        //System.out.println(firstBook.getId());
 
         BookDAO model = new BookDAO();
-        model.createBook(firstBook);
+        BookController bookController = new BookController(model);
+        bookController.createBook("El camino del Artista");
     }
 
 
