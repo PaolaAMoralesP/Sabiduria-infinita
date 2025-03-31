@@ -1,6 +1,7 @@
 package com.mvc.controller;
 import com.mvc.model.Book;
 import com.mvc.model.BookDAO;
+//import com.mvc.view.BookView;
 
 public class BookController {
  BookDAO bookDAO;
@@ -9,6 +10,7 @@ public class BookController {
     this.bookDAO = bookDAO;
  }
  public void createBook(Book book){
-        BookDAO.createBook(book); 
+        bookDAO.createBook(book);
+
     }
 }

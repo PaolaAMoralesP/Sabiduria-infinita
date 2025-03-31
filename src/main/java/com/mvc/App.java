@@ -2,8 +2,9 @@ package com.mvc;
 
 import com.mvc.controller.BookController;
 // import com.mvc.config.DBManager;
-import com.mvc.model.Book;
+//import com.mvc.model.Book;
 import com.mvc.model.BookDAO;
+import com.mvc.view.BookView;
 
 /**
  * Hello world!
@@ -22,7 +23,8 @@ public class App
 
         BookDAO model = new BookDAO();
         BookController bookController = new BookController(model);
-        bookController.createBook("El camino del Artista");
+        BookView bookView = new BookView(bookController);
+        bookView.createBook();
     }
 
 
