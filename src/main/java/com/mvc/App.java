@@ -27,7 +27,4 @@ public class App
         bookView.createBook();
     }
 
-
-
-
 }
