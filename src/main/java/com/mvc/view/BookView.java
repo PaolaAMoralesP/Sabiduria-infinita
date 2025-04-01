@@ -23,6 +23,7 @@ public class BookView {
                     break;
                 case 2:
                     System.out.println("Has elegido la opción 2");
+                    selectBook();
                     break;
                 case 3:
                     System.out.println("Has elegido la opción 3");
@@ -37,6 +38,12 @@ public class BookView {
         //Create, view (+filter/search), edit, delete
         }
 
+        public void selectBook () {
+            System.out.println("Testing!!!");
+            bookController.selectBook();
+
+
+        }
 
     public void createBook (){
         Scanner scanner = new Scanner(System.in);
