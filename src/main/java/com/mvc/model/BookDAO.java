@@ -33,7 +33,7 @@ public class BookDAO {
 
     }
 
-    public void selectBook(Book book) {
+    public void selectBook() {
             try {
                 connection = DBManager.initConnection();
                 String sql = "SELECT * FROM books" ;
@@ -55,4 +55,6 @@ public class BookDAO {
                 DBManager.closeConnection();
             }
     }
+
+    
 }
