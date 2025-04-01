@@ -33,28 +33,26 @@ public class BookDAO {
 
     }
 
-    public void selectBook() {
-            try {
-                connection = DBManager.initConnection();
-                String sql = "SELECT * FROM books" ;
-                PreparedStatement pstmt = connection.prepareStatement(sql);
-                ResultSet result = pstmt.executeQuery();
-                int count = 0;
-                while (result.next()) {
-                    String title = result.getString("title");
-                    String author = result.getString("author");
-                    String description = result.getString("description");
-                    String isbn = result.getString("isbn");
-                    String genre = result.getString("genre");
-                    System.out.printf("book #%d: %s - %s - %s - %s - %s%n", ++count, title, author, description, isbn, genre);
-                }
-
-            } catch (Exception e) {
+    public void selectAllBooks() {
+        try {
+            connection = DBManager.initConnection();
+            String sql = "SELECT * FROM books" ;
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            ResultSet result = pstmt.executeQuery();
+            int count = 0;
+            while (result.next()) {
+            String title = result.getString("title");
+            String author = result.getString("author");
+            String description = result.getString("description");
+            String isbn = result.getString("isbn");
+            String genre = result.getString("genre");
+            System.out.printf("book #%d: %s - %s - %s - %s - %s%n", ++count, title, author, description, isbn, genre);
+        } 
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-            } finally {
-                DBManager.closeConnection();
-            }
+        } finally {
+            DBManager.closeConnection();
+        }   
     }
-
     
 }

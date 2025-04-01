@@ -13,7 +13,7 @@ public class BookController {
         bookDAO.createBook(book);
 
     }
- public void selectBook() {
-        bookDAO.selectBook();
+ public void selectAllBooks() {
+        bookDAO.selectAllBooks();
 }
 }
