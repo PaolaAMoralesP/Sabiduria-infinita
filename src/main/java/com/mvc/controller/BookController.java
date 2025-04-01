@@ -16,4 +16,8 @@ public class BookController {
  public void selectAllBooks() {
         bookDAO.selectAllBooks();
 }
+
+ public void searchByTitle(String titleAnswer) {
+         bookDAO.searchByTitle(titleAnswer);
+ }
 }

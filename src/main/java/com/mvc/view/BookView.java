@@ -24,13 +24,14 @@ public class BookView {
                     break;
                 case 2:
                     System.out.println("Has elegido la opción 2");
-                    System.out.println("Quieres buscar por: \n1.Titulo \n2. Autor \n3.Genero");
                     selectAllBooks();
-                    int searchAnswer = scanner.nextInt();
-                    searchChoice(searchAnswer);
                     break;
                 case 3:
                     System.out.println("Has elegido la opción 3");
+                    System.out.println("Quieres buscar por: \n1.Titulo \n2. Autor \n3.Genero");
+                    int searchAnswer = scanner.nextInt();
+                    searchChoice(searchAnswer);
+                    searchByTitle(null);
                     break;
                 case 4:
                     System.out.println("Has elegido la opción 4");
@@ -44,6 +45,7 @@ public class BookView {
             scanner.close();
         //Create, view (+filter/search), edit, delete
         }
+
 
         public void selectAllBooks () {
             System.out.println("Testing!!!");
@@ -72,11 +74,14 @@ public class BookView {
     }
 
     public void searchChoice (int searchAnswer){
-        
-        
         switch(searchAnswer){
             case 1:
             System.out.println("Has elegido buscar por titulo");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Escribe tu búsqueda:");
+            String titleAnswer = scanner.nextLine();
+            System.out.println("Has buscado "+titleAnswer);
+            searchByTitle();
             break;
         case 2:
             System.out.println("Has elegido buscar por autor");
@@ -87,6 +92,10 @@ public class BookView {
         default:
             System.out.println("Error");
     }
+    }
 
+    public void searchByTitle(String titleAnswer){
+
+    System.out.println("Hola " +titleAnswer);
     }
 }

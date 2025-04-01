@@ -54,5 +54,33 @@ public class BookDAO {
             DBManager.closeConnection();
         }   
     }
+
+    public void searchByTitle(String titleAnswer) {
+        try {
+            connection = DBManager.initConnection();
+            String sql = "SELECT * FROM public.books WHERE title LIKE ?";
     
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, "%" + titleAnswer + "%");
+    
+            ResultSet result = pstmt.executeQuery();
+    
+            while (result.next()) {
+                String title = result.getString("title");
+                String author = result.getString("author");
+                String description = result.getString("description");
+                String isbn = result.getString("isbn");
+                String genre = result.getString("genre");
+                System.out.printf("Book: %s - %s - %s - %s - %s%n", title, author, description, isbn, genre);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }
+    }
+
+
+
+
 }
