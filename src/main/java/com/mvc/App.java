@@ -5,7 +5,7 @@ import com.mvc.controller.BookController;
 //import com.mvc.model.Book;
 import com.mvc.model.BookDAO;
 import com.mvc.view.BookView;
-import com.mvc.view.MenuView;
+
 
 /**
  * Hello world!
@@ -25,8 +25,8 @@ public class App
         BookDAO model = new BookDAO();
         BookController bookController = new BookController(model);
         BookView bookView = new BookView(bookController);
-        MenuView.showMenu(bookView);
-        bookView.createBook();
+        bookView.showMenu();        
+       
     }
 
 }
