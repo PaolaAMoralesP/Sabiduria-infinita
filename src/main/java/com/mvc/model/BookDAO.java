@@ -3,7 +3,8 @@ package com.mvc.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.util.ArrayList;
+import java.util.List;
 
 import com.mvc.config.DBManager;
 
@@ -56,6 +57,8 @@ public class BookDAO {
     }
 
     public void searchByTitle(String titleAnswer) {
+        
+    List<Book> books = new ArrayList<>();
         try {
             connection = DBManager.initConnection();
             String sql = "SELECT * FROM public.books WHERE title LIKE ?";
@@ -72,6 +75,8 @@ public class BookDAO {
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
                 System.out.printf("Book: %s - %s - %s - %s - %s%n", title, author, description, isbn, genre);
+
+                //objeto de tipo libro y ek resul get string a traves delos seters del modelo meter cada una de la info para crear el objeto y luego books.add para  argegar a la list y luego retur books
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
