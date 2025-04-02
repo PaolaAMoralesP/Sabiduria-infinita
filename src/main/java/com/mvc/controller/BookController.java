@@ -44,4 +44,11 @@ public class BookController {
                 bookDAO.editBook(idAnswer);
         }
 
+        public void deleteBook(int idDelete){
+                bookDAO.deleteBook(idDelete);
+        }
+
+        public void removeBook(int id){
+                bookDAO.removeBook(id);
+        }
 }

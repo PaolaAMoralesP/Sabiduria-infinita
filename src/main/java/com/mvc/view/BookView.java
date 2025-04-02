@@ -39,6 +39,8 @@ public class BookView {
                     break;
                 case 5:
                     System.out.println("Has elegido la opción 5");
+                    deleteBook();
+                    // bookController.removeBook(Book book);
                     break;
                 default:
                     System.out.println("Error");
@@ -142,6 +144,20 @@ public class BookView {
     updatedBook.setId(idAnswer);
     bookController.updateBook(updatedBook);
     scannerEdit.close();
+   }
+
+   public void deleteBook (){
+    Scanner scannerDelete = new Scanner(System.in);
+    System.out.println("Lista actual de libros:");
+    bookController.selectAllBooks();
+
+    System.out.println("Ingrese ID:");
+    // int idDelete = scannerDelete.nextInt();
+    int id = scannerDelete.nextInt();
+    // System.out.println("Vamos a eliminar el libro con ID " + idDelete);
+    bookController.removeBook (id);
+    scannerDelete.close();
+
    }
 }
 

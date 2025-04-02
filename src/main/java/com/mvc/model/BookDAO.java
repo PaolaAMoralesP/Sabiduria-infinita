@@ -197,10 +197,42 @@ public class BookDAO {
             System.out.println(e.getMessage());
         } finally {
             DBManager.closeConnection();
-        }   
-}
+        }  
+         
+ } 
+public void removeBook(int id){
+        try {
+            connection = DBManager.initConnection();
+            String sql = "DELETE FROM books WHERE id = ?";
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            
+            // pstmt.setString(1, book.getTitle());
+            // pstmt.setString(2, book.getAuthor());
+            // pstmt.setString(3, book.getDescription());
+            // pstmt.setString(4, book.getIsbn());
+            // pstmt.setString(5, book.getGenre());
+            // pstmt.setInt(6,id);
+
+
+            int rowsDeleted = pstmt.executeUpdate();
+            if (rowsDeleted > 0) {
+                System.out.println("✅ Libro eliminado con éxito.");
+            } else {
+                System.out.println("⚠️ No se encontró ningún libro con ese ID.");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }
+    }
 
 public void editBook(int idAnswer){
+
+}
+
+public void deleteBook(int idDelete) {
 
 }
 
