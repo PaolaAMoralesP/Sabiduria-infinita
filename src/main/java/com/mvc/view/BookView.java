@@ -77,15 +77,21 @@ public class BookView {
         switch(searchAnswer){
             case 1:
             System.out.println("Has elegido buscar por titulo");
-            Scanner scanner = new Scanner(System.in);
+            Scanner scannerTitle = new Scanner(System.in);
             System.out.println("Escribe tu búsqueda:");
-            String titleAnswer = scanner.nextLine();
+            String titleAnswer = scannerTitle.nextLine();
             System.out.println("Has buscado "+titleAnswer);
             bookController.findBookByTitle(titleAnswer);
-            
+            scannerTitle.close();
             break;
         case 2:
             System.out.println("Has elegido buscar por autor");
+            System.out.println("Escribe tu búsqueda:");
+            Scanner scannerAuthor = new Scanner(System.in);
+            String authorAnswer = scannerAuthor.nextLine();
+            System.out.println("Has buscado "+authorAnswer);
+            bookController.findBookByAuthor(authorAnswer);
+            scannerAuthor.close();
             break;
         case 3:
             System.out.println("Has elegido buscar por genero");
@@ -99,6 +105,9 @@ public class BookView {
 
    }
 
+   public void searchByAuthor(String authorAnswer){
+
+   }
 
 
 }
