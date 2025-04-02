@@ -13,6 +13,7 @@ public class App
 {
     public static void main( String[] args )
     {
+        WelcomeLibrary.printWelcomeMessage() ;
         System.out.println( "Sabiduria-infinita" );
         BookDAO model = new BookDAO();
         BookController bookController = new BookController(model);
