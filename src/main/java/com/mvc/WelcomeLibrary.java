@@ -7,26 +7,26 @@ public class WelcomeLibrary {
     public static final String ANSI_PURPLE = "\u001B[35m";
 
     public static void printWelcomeMessage() {
-        String asciiArt =  ANSI_CYAN  + """
-         ______
-        /     /\\
-       /     /##\\
-      /     /####\\
-     /     /######\\
-    /     /########\\
-   /     /##########\\
-  /     /############\\
- (_____(##############|
-  \\###################|
-   \\##################|
-    \\#################|
-     \\_______________|
-    """ + ANSI_RESET;
+        String asciiArt = ANSI_CYAN + """
+                             ______
+                            /     /\\
+                           /     /##\\
+                          /     /####\\
+                         /     /######\\
+                        /     /########\\
+                       /     /##########\\
+                      /     /############\\
+                     (_____(##############|
+                     \\###################|
+                      \\##################|
+                       \\#################|
+                         \\_______________|
+""" + ANSI_RESET;
 
     String welcomeMessage = ANSI_PURPLE + """
 ══════════════════════════════════════════════════════════════════════════════
-     🌟 ¡Bienvenide a la Biblioteca Sabiduría Infinita! 🌟
-     Sumérgete en historias, conocimientos y aventuras que cambiarán tu mundo.
+          🌟 ¡Bienvenide a la Biblioteca Sabiduría Infinita! 🌟
+          Aquí, cada página es una puerta hacia lo desconocido.      
 ══════════════════════════════════════════════════════════════════════════════
 """ + ANSI_RESET;
 
