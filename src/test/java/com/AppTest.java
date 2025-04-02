@@ -1,4 +1,4 @@
-package com.sabiduriainfinita;
+package com;
 
 import static org.junit.Assert.assertTrue;
 

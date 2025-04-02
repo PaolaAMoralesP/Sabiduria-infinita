@@ -1,0 +1,18 @@
+# Ignorar archivos compilados
+*.class
+
+# Ignorar carpetas de compilación
+/target/
+/build/
+
+/.idea/
+/*.iml
+
+# Archivos y carpetas con -env
+*-env
+*-env.*
+*-env/
+
+# Ignorar archivos .env
+.env
+.env.*
