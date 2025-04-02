@@ -44,11 +44,9 @@ public class BookDAO {
                 int id = result.getInt("id");
                 String title = result.getString("title");
                 String author = result.getString("author");
-                String description = result.getString("description");
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
-                System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
-                        genre);
+                System.out.printf("Book #%d: %s - %s - %s - %s%n", id, title, author,  isbn, genre);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
