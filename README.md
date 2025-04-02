@@ -11,6 +11,7 @@ Sabiduria Infinita is a Java-based application designed to manage a collection o
 - [Contributing](#contributing)
 - [License](#license)
 - [Made with Love](#made-with-love)
+- [Contacts](#contacts)
 
 ## Installation
 
@@ -74,7 +75,7 @@ Dependencies are managed via Maven and are specified in the `pom.xml` file.
 
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
 
-## 📜 License
+## License
 This project is under the [Feminist Peer Production License 2F2](https://labekka.red/licencia-f2f/).  
 <br>
 <img src="https://github.com/user-attachments/assets/90acbc07-7ba9-45e1-867b-6d284f4e6288" alt="f2f-license" width="150">
@@ -88,19 +89,19 @@ Made with ❤️ by Alba Riera, Kat Leverton, Larissa Saud, Maria Bongoll and Pa
 This project is crafted with love for books and technology, aiming to bring the joy of reading and efficient management to everyone. Whether you're a developer or a book enthusiast, we hope you find this tool helpful and inspiring.
 
 
-## ☎️ Contactos
+## Contacts
 
 <table style="border-collapse: collapse; border: none;">
   <tr>
   <td align="center" style="border: none;">
-      <img src="https://github.com/user-attachments/assets/bba81df2-5865-44c6-a56b-f4688e67338c" alt="alba-avatar" width="80">
+      <img src="https://github.com/user-attachments/assets/c2283d46-1e55-48c4-86ed-bf92f472afa3" alt="alba-avatar" width="80">
       <br><b>Alba Riera</b>
       <br>
       <a href="https://www.linkedin.com/in/albamar%C3%ADarieravelazquez/">LinkedIn</a> |
       <a href="https://github.com/rieradipe")">GitHub</a>
     </td>
   <td align="center" style="border: none;">
-      <img src="https://github.com/user-attachments/assets/6b926678-a291-45ee-ab90-ca1dbfd3dfd3" alt="kat-avatar" width="80">
+      <img src="https://github.com/user-attachments/assets/3de566f6-8d2e-4193-9881-d1cb1ab38b62" alt="kat-avatar" width="80">
       <br><b>Kat Leverton</b>
       <br>
       <a href="https://www.linkedin.com/in/kat-leverton/">LinkedIn</a> |
@@ -114,7 +115,7 @@ This project is crafted with love for books and technology, aiming to bring the 
       <a href="https://github.com/saudlari/">GitHub</a>
     </td>
     <td align="center" style="border: none;">
-      <img src="https://github.com/user-attachments/assets/89108af5-007e-428f-b199-692beac81cc6" alt="larissa-avatar" width="80">
+      <img src="https://github.com/user-attachments/assets/64a5eb22-e2be-4315-ae7a-768f8c894c2d" alt="maria-avatar" width="80">
       <br><b>Maria Bongoll</b>
       <br>
       <a href="https://www.linkedin.com/in/mariabongoll">LinkedIn</a> |
