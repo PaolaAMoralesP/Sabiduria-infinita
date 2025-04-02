@@ -44,6 +44,7 @@ public class BookDAO {
                 int id = result.getInt("id");
                 String title = result.getString("title");
                 String author = result.getString("author");
+
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
                 System.out.printf("Book #%d: %s - %s - %s - %s%n", id, title, author,  isbn, genre);
