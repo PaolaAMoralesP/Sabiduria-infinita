@@ -81,7 +81,7 @@ public class BookView {
             System.out.println("Escribe tu búsqueda:");
             String titleAnswer = scanner.nextLine();
             System.out.println("Has buscado "+titleAnswer);
-            searchByTitle();
+            searchByTitle(titleAnswer);
             break;
         case 2:
             System.out.println("Has elegido buscar por autor");
