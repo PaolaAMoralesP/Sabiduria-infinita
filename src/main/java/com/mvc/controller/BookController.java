@@ -36,4 +36,12 @@ public class BookController {
                 return bookDAO.findBookByGenre(genreAnswer);
         }
 
+        public void updateBook(Book book){
+                bookDAO.updateBook(book);
+        }
+
+        public void editBook(int idAnswer){
+                bookDAO.editBook(idAnswer);
+        }
+
 }

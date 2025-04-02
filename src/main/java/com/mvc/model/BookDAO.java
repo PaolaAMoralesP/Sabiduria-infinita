@@ -79,11 +79,6 @@ public class BookDAO {
                 System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
                         genre);
 
-                // objeto de tipo libro y ek resul get string a traves delos seters del modelo
-                // meter cada una de la info para crear el objeto y luego books.add para argegar
-                // a la list y luego retur books
-
-                // Create a new Book object and add it to the list
                 Book book = new Book(title, author, description, isbn, genre);
                 book.setTitle(title);
                 book.setAuthor(author);
@@ -122,7 +117,6 @@ public class BookDAO {
                 String genre = result.getString("genre");
                 System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
                         genre);
-
 
                 Book book = new Book(title, author, description, isbn, genre);
                 book.setTitle(title);
@@ -178,10 +172,37 @@ public class BookDAO {
         } finally {
             DBManager.closeConnection();
         }
-
-        return books; 
-        
+        return books;    
     }
+
+    public void updateBook(Book book){
+        try {
+            connection = DBManager.initConnection();
+            String sql = "UPDATE books SET title = ?, author = ?, description = ?, isbn = ?, genre = ? WHERE id = ?";
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, book.getTitle());
+            pstmt.setString(2, book.getAuthor());
+            pstmt.setString(3, book.getDescription());
+            pstmt.setString(4, book.getIsbn());
+            pstmt.setString(5, book.getGenre());
+            pstmt.setInt(6,book.getId());
+            
+            int rowsUpdated = pstmt.executeUpdate();
+            if (rowsUpdated > 0) {
+            System.out.println("✅ Libro actualizado con éxito.");
+            } else {
+            System.out.println("⚠️ No se encontró ningún libro con ese ID.");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }   
+}
+
+public void editBook(int idAnswer){
+
+}
 
 
 }

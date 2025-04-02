@@ -31,10 +31,11 @@ public class BookView {
                     System.out.println("Quieres buscar por: \n1.Titulo \n2. Autor \n3.Genero");
                     int searchAnswer = scanner.nextInt();
                     searchChoice(searchAnswer);
-                    searchByTitle(null);
+                    // searchByTitle(null);
                     break;
                 case 4:
-                    System.out.println("Has elegido la opción 4");
+                    System.out.println("Has elegido la opción 4: modificar un libro");
+                    editBook();
                     break;
                 case 5:
                     System.out.println("Has elegido la opción 5");
@@ -50,8 +51,6 @@ public class BookView {
         public void selectAllBooks () {
             System.out.println("Testing!!!");
             bookController.selectAllBooks();
-
-
         }
 
     public void createBook (){
@@ -116,6 +115,33 @@ public class BookView {
    }
 
    public void searchByGenre(String genreAnswer){
+   }
+
+   public void updateBook(int idAnswer){
+    
+   }
+
+   public void editBook(){
+    Scanner scannerEdit = new Scanner(System.in);
+    System.out.println("Lista actual de libros:");
+    bookController.selectAllBooks();
+    System.out.println("Ingrese ID:");
+    int idAnswer = scannerEdit.nextInt();
+    scannerEdit.nextLine();
+    System.out.println("Nuevo título:");
+    String title = scannerEdit.nextLine();
+    System.out.println("Nuevo autor:");
+    String author = scannerEdit.nextLine();
+    System.out.println("Nueva descripción:");
+    String description = scannerEdit.nextLine();
+    System.out.println("Nuevo ISBN:");
+    String isbn = scannerEdit.nextLine();
+    System.out.println("Nuevo género:");
+    String genre = scannerEdit.nextLine();
+    Book updatedBook = new Book(title, author, description, isbn, genre);
+    updatedBook.setId(idAnswer);
+    bookController.updateBook(updatedBook);
+    scannerEdit.close();
    }
 }
 
