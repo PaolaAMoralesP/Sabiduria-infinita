@@ -19,36 +19,32 @@ public class BookView {
             
             switch(answer){
                 case 1:
-                    System.out.println("\nHas elegido la opción 1\n");
+                    System.out.println("\nHas elegido la opción 1: Crear libro\n");
                     createBook();
                     break;
                 case 2:
-                    System.out.println("\nHas elegido la opción 2\n");
+                    System.out.println("\nHas elegido la opción 2: Ver todos los libros\n");
                     selectAllBooks();
                     break;
                 case 3:
-                    System.out.println("\nHas elegido la opción 3\n");
+                    System.out.println("\nHas elegido la opción 3: Buscar un libro\n");
                     System.out.println("\nQuieres buscar por: \n\t1.Titulo \n\t2. Autor \n\t3.Genero");
                     int searchAnswer = scanner.nextInt();
                     searchChoice(searchAnswer);
-                    // searchByTitle(null);
                     break;
                 case 4:
-                    System.out.println("\nHas elegido la opción 4: modificar un libro\n");
+                    System.out.println("\nHas elegido la opción 4: Modificar un libro\n");
                     editBook();
                     break;
                 case 5:
-                    System.out.println("\nHas elegido la opción 5\n");
+                    System.out.println("\nHas elegido la opción 5: Borrar un libro\n");
                     deleteBook();
-                    // bookController.removeBook(Book book);
                     break;
                 default:
                     System.out.println("Error");
             }
             scanner.close();
-        //Create, view (+filter/search), edit, delete
         }
-
 
         public void selectAllBooks () {
             bookController.selectAllBooks();
@@ -70,7 +66,6 @@ public class BookView {
         Book book = new Book (title, author, description, isbn, genre);
         bookController.createBook(book);
         scanner.close();
-        
     }
 
     public void searchChoice (int searchAnswer){
@@ -108,53 +103,48 @@ public class BookView {
     }
 
     public void searchByTitle(String titleAnswer){
-
    }
 
    public void searchByAuthor(String authorAnswer){
-
    }
 
    public void searchByGenre(String genreAnswer){
    }
 
-   public void updateBook(int idAnswer){
-    
+   public void updateBook(int idAnswer){  
    }
 
    public void editBook(){
-    Scanner scannerEdit = new Scanner(System.in);
-    System.out.println("Lista actual de libros:");
-    bookController.selectAllBooks();
-    System.out.println("Ingrese ID:");
-    int idAnswer = scannerEdit.nextInt();
-    scannerEdit.nextLine();
-    System.out.println("Nuevo título:");
-    String title = scannerEdit.nextLine();
-    System.out.println("Nuevo autor:");
-    String author = scannerEdit.nextLine();
-    System.out.println("Nueva descripción:");
-    String description = scannerEdit.nextLine();
-    System.out.println("Nuevo ISBN:");
-    String isbn = scannerEdit.nextLine();
-    System.out.println("Nuevo género:");
-    String genre = scannerEdit.nextLine();
-    Book updatedBook = new Book(title, author, description, isbn, genre);
-    updatedBook.setId(idAnswer);
-    bookController.updateBook(updatedBook);
-    scannerEdit.close();
+        Scanner scannerEdit = new Scanner(System.in);
+        System.out.println("Lista actual de libros:");
+        bookController.selectAllBooks();
+        System.out.println("Ingresa ID:");
+        int idAnswer = scannerEdit.nextInt();
+        scannerEdit.nextLine();
+        System.out.println("Nuevo título:");
+        String title = scannerEdit.nextLine();
+        System.out.println("Nuevo autor:");
+        String author = scannerEdit.nextLine();
+        System.out.println("Nueva descripción:");
+        String description = scannerEdit.nextLine();
+        System.out.println("Nuevo ISBN:");
+        String isbn = scannerEdit.nextLine();
+        System.out.println("Nuevo género:");
+        String genre = scannerEdit.nextLine();
+        Book updatedBook = new Book(title, author, description, isbn, genre);
+        updatedBook.setId(idAnswer);
+        bookController.updateBook(updatedBook);
+        scannerEdit.close();
    }
 
    public void deleteBook (){
     Scanner scannerDelete = new Scanner(System.in);
     System.out.println("Lista actual de libros:");
     bookController.selectAllBooks();
-
-    System.out.println("Ingrese ID:");
+    System.out.println("Ingresa ID:");
     int id = scannerDelete.nextInt();
     bookController.removeBook (id);
     scannerDelete.close();
-
    }
 }
 

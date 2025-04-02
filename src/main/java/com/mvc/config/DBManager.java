@@ -26,8 +26,8 @@ public class DBManager {
     public static void closeConnection(){
         try {
             connection.close();
-        } catch (Exception e) {
-            
+        } catch (Exception e) { 
+            System.out.println(e.getMessage());
         }
     }
 }

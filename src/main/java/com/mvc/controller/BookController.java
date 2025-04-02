@@ -15,14 +15,11 @@ public class BookController {
 
         public void createBook(Book book) {
                 bookDAO.createBook(book);
-
         }
 
         public void selectAllBooks() {
                 bookDAO.selectAllBooks();
         }
-
-
 
         public List<Book> findBookByTitle(String titleAnswer) {
                 return bookDAO.findBookByTitle(titleAnswer);
