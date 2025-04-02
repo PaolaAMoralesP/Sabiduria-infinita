@@ -125,7 +125,7 @@ This project is crafted with love for books and technology, aiming to bring the 
       <img src="https://github.com/user-attachments/assets/0b122db9-5533-4ec0-8266-cb21d390e9c6" alt="paola-avatar" width="80">
       <br><b>Paola Morales</b>
       <br>
-      <a href="https://www.linkedin.com/in/paola-morales">LinkedIn</a> |
+      <a href="https://www.linkedin.com/in/paola-morales-">LinkedIn</a> |
       <a href="https://github.com/PaolaAMoralesP">GitHub</a>
     </td>
   </tr>
