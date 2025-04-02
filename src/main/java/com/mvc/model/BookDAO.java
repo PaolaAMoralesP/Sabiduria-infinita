@@ -39,14 +39,15 @@ public class BookDAO {
             String sql = "SELECT * FROM books";
             PreparedStatement pstmt = connection.prepareStatement(sql);
             ResultSet result = pstmt.executeQuery();
-            int count = 0;
+            // int count = 0;
             while (result.next()) {
+                int id = result.getInt("id");
                 String title = result.getString("title");
                 String author = result.getString("author");
                 String description = result.getString("description");
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
-                System.out.printf("book #%d: %s - %s - %s - %s - %s%n", ++count, title, author, description, isbn,
+                System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
                         genre);
             }
         } catch (Exception e) {
@@ -69,12 +70,14 @@ public class BookDAO {
             ResultSet result = pstmt.executeQuery();
 
             while (result.next()) {
+                int id = result.getInt("id");
                 String title = result.getString("title");
                 String author = result.getString("author");
                 String description = result.getString("description");
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
-                System.out.printf("Book: %s - %s - %s - %s - %s%n", title, author, description, isbn, genre);
+                System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
+                        genre);
 
                 // objeto de tipo libro y ek resul get string a traves delos seters del modelo
                 // meter cada una de la info para crear el objeto y luego books.add para argegar
@@ -111,12 +114,14 @@ public class BookDAO {
             ResultSet result = pstmt.executeQuery();
 
             while (result.next()) {
+                int id = result.getInt("id");
                 String title = result.getString("title");
                 String author = result.getString("author");
                 String description = result.getString("description");
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
-                System.out.printf("Book: %s - %s - %s - %s - %s%n", title, author, description, isbn, genre);
+                System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
+                        genre);
 
 
                 Book book = new Book(title, author, description, isbn, genre);
@@ -150,13 +155,14 @@ public class BookDAO {
             ResultSet result = pstmt.executeQuery();
 
             while (result.next()) {
+                int id = result.getInt("id");
                 String title = result.getString("title");
                 String author = result.getString("author");
                 String description = result.getString("description");
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
-                System.out.printf("Book: %s - %s - %s - %s - %s%n", title, author, description, isbn, genre);
-
+                System.out.printf("Book #%d: %s - %s - %s - %s - %s%n", id, title, author, description, isbn,
+                        genre);
 
                 Book book = new Book(title, author, description, isbn, genre);
                 book.setTitle(title);
