@@ -56,7 +56,7 @@ public class BookDAO {
         }
     }
 
-    public List<Book> searchByTitle(String titleAnswer) {
+    public List<Book> findBookByTitle(String titleAnswer) {
 
         List<Book> books = new ArrayList<>();
         try {
@@ -98,5 +98,6 @@ public class BookDAO {
 
         return books; // Return the list of books
     }
+
 
 }

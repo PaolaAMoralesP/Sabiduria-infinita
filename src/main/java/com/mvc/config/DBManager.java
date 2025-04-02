@@ -18,7 +18,7 @@ public class DBManager {
     public static Connection initConnection(){
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            //System.out.println("Se ha conectado con exito!");
+            System.out.println("Se ha conectado con exito!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }  
@@ -27,7 +27,7 @@ public class DBManager {
     public static void closeConnection(){
         try {
             connection.close();
-            //System.out.println("Conexión cerrada correctamente");
+            System.out.println("Conexión cerrada correctamente");
         } catch (Exception e) {
             
         }
