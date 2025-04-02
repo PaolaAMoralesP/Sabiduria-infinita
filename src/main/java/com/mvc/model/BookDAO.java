@@ -138,5 +138,44 @@ public class BookDAO {
         
     }
 
+    public List<Book> findBookByGenre(String genreAnswer) {
+        List<Book> books = new ArrayList<>();
+        try {
+            connection = DBManager.initConnection();
+            String sql = "SELECT * FROM public.books WHERE genre ILIKE ?";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, "%" + genreAnswer + "%");
+
+            ResultSet result = pstmt.executeQuery();
+
+            while (result.next()) {
+                String title = result.getString("title");
+                String author = result.getString("author");
+                String description = result.getString("description");
+                String isbn = result.getString("isbn");
+                String genre = result.getString("genre");
+                System.out.printf("Book: %s - %s - %s - %s - %s%n", title, author, description, isbn, genre);
+
+
+                Book book = new Book(title, author, description, isbn, genre);
+                book.setTitle(title);
+                book.setAuthor(author);
+                book.setDescription(description);
+                book.setIsbn(isbn);
+                book.setGenre(genre);
+                books.add(book);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            DBManager.closeConnection();
+        }
+
+        return books; 
+        
+    }
+
 
 }

@@ -95,6 +95,12 @@ public class BookView {
             break;
         case 3:
             System.out.println("Has elegido buscar por genero");
+            System.out.println("Escribe tu búsqueda:");
+            Scanner scannerGenre = new Scanner(System.in);
+            String genreAnswer = scannerGenre.nextLine();
+            System.out.println("Has buscado "+genreAnswer);
+            bookController.findBookByGenre(genreAnswer);
+            scannerGenre.close();
             break;
         default:
             System.out.println("Error");
@@ -109,5 +115,7 @@ public class BookView {
 
    }
 
-
+   public void searchByGenre(String genreAnswer){
+   }
 }
+

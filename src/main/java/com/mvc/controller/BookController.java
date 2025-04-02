@@ -32,5 +32,8 @@ public class BookController {
                 return bookDAO.findBookByAuthor(authorAnswer);
         }
 
+        public List<Book>  findBookByGenre (String genreAnswer) {
+                return bookDAO.findBookByGenre(genreAnswer);
+        }
 
 }
