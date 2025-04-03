@@ -2,9 +2,7 @@
 
 Sabiduria Infinita is a Java-based application designed to manage a collection of books. It provides functionalities to create, view, search, update, and delete book records.
 
-
-![Captura desde 2025-04-02 22-01-01](https://github.com/user-attachments/assets/850f3039-f6e4-4438-9efc-47272b60bc8c)
-
+![Grabación de pantalla desde 2025-04-03 09-03-12](https://github.com/user-attachments/assets/d27cfb07-fb58-4652-b38e-837ff04cd6f0)
 
 ## Table of Contents
 
