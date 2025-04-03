@@ -1,150 +1,123 @@
 package com.mvc.view;
-import java.util.Scanner;
 
+import java.util.Scanner;
 import com.mvc.controller.BookController;
 import com.mvc.model.Book;
-
+import static com.mvc.WelcomeLibrary.*; // Importando los colores
 
 public class BookView {
     private BookController bookController;
+    private Scanner scanner;
 
-    public BookView (BookController bookController){
+    public BookView(BookController bookController) {
         this.bookController = bookController;
+        this.scanner = new Scanner(System.in);
     }
+
     public void showMenu() {
-        System.out.println(
-            "Aquí irá nuestro menú. Seleciona:\n\t1. Crear un libro\n\t2. Ver listado de libros\n\t3. Buscar un libro\n \t4. Editar un libro\n\t5. Eliminar un libro\nEscribe tu respuesta:\n");
-            Scanner scanner = new Scanner(System.in);
-            int answer = scanner.nextInt();
-            
-            switch(answer){
-                case 1:
-                    System.out.println("\nHas elegido la opción 1: Crear libro\n");
-                    createBook();
-                    break;
-                case 2:
-                    System.out.println("\nHas elegido la opción 2: Ver todos los libros\n");
-                    selectAllBooks();
-                    break;
-                case 3:
-                    System.out.println("\nHas elegido la opción 3: Buscar un libro\n");
-                    System.out.println("\nQuieres buscar por: \n\t1.Titulo \n\t2. Autor \n\t3.Genero");
-                    int searchAnswer = scanner.nextInt();
-                    searchChoice(searchAnswer);
-                    break;
-                case 4:
-                    System.out.println("\nHas elegido la opción 4: Modificar un libro\n");
-                    editBook();
-                    break;
-                case 5:
-                    System.out.println("\nHas elegido la opción 5: Borrar un libro\n");
-                    deleteBook();
-                    break;
-                default:
-                    System.out.println("Error");
-            }
-            scanner.close();
-        }
-
-        public void selectAllBooks () {
-            bookController.selectAllBooks();
-        }
+        System.out.println(ANSI_CYAN + "\n════════════════ MENÚ PRINCIPAL ════════════════" + ANSI_RESET);
+        System.out.println(ANSI_PURPLE + "\t1. Crear un libro\n\t2. Ver listado de libros\n\t3. Buscar un libro\n" +
+                "\t4. Editar un libro\n\t5. Eliminar un libro" + ANSI_RESET);
+        System.out.print(ANSI_CYAN + "Escribe tu respuesta: " + ANSI_RESET);
         
-    public void createBook (){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el título del libro\n");
-        String title = scanner.nextLine();
-        System.out.println("Ingrese el autor del libro\n");
-        String author = scanner.nextLine();
-        System.out.println("Ingrese la descripción del libro\n");
-        String description = scanner.nextLine();
-        System.out.println("Ingrese ISBN del libro\n");
-        String isbn = scanner.nextLine();
-        System.out.println("Ingrese el género del libro\n");
-        String genre = scanner.nextLine();
-    
-        Book book = new Book (title, author, description, isbn, genre);
-        bookController.createBook(book);
-        scanner.close();
-    }
-
-    public void searchChoice (int searchAnswer){
-        switch(searchAnswer){
+        int answer = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea
+        
+        switch (answer) {
             case 1:
-            System.out.println("Has elegido buscar por titulo");
-            Scanner scannerTitle = new Scanner(System.in);
-            System.out.println("Escribe tu búsqueda:");
-            String titleAnswer = scannerTitle.nextLine();
-            System.out.println("Has buscado "+titleAnswer);
-            bookController.findBookByTitle(titleAnswer);
-            scannerTitle.close();
-            break;
-        case 2:
-            System.out.println("Has elegido buscar por autor");
-            System.out.println("Escribe tu búsqueda:");
-            Scanner scannerAuthor = new Scanner(System.in);
-            String authorAnswer = scannerAuthor.nextLine();
-            System.out.println("Has buscado "+authorAnswer);
-            bookController.findBookByAuthor(authorAnswer);
-            scannerAuthor.close();
-            break;
-        case 3:
-            System.out.println("Has elegido buscar por genero");
-            System.out.println("Escribe tu búsqueda:");
-            Scanner scannerGenre = new Scanner(System.in);
-            String genreAnswer = scannerGenre.nextLine();
-            System.out.println("Has buscado "+genreAnswer);
-            bookController.findBookByGenre(genreAnswer);
-            scannerGenre.close();
-            break;
-        default:
-            System.out.println("Error");
-    }
+                System.out.println(ANSI_PURPLE + "\nHas elegido la opción 1: Crear libro" + ANSI_RESET);
+                createBook();
+                break;
+            case 2:
+                System.out.println(ANSI_PURPLE + "\nHas elegido la opción 2: Ver todos los libros" + ANSI_RESET);
+                selectAllBooks();
+                break;
+            case 3:
+                System.out.println(ANSI_PURPLE + "\nHas elegido la opción 3: Buscar un libro" + ANSI_RESET);
+                System.out.println("Quieres buscar por: \n\t1.Título \n\t2. Autor \n\t3.Género");
+                int searchAnswer = scanner.nextInt();
+                scanner.nextLine();
+                searchChoice(searchAnswer);
+                break;
+            case 4:
+                System.out.println(ANSI_PURPLE + "\nHas elegido la opción 4: Modificar un libro" + ANSI_RESET);
+                editBook();
+                break;
+            case 5:
+                System.out.println(ANSI_PURPLE + "\nHas elegido la opción 5: Borrar un libro" + ANSI_RESET);
+                deleteBook();
+                break;
+            default:
+                System.out.println(ANSI_RED + "Error: Opción no válida" + ANSI_RESET);
+        }
     }
 
-    public void searchByTitle(String titleAnswer){
-   }
+    public void selectAllBooks() {
+        bookController.selectAllBooks();
+    }
 
-   public void searchByAuthor(String authorAnswer){
-   }
+    public void createBook() {
+        System.out.print(ANSI_CYAN + "Ingrese el título del libro: " + ANSI_RESET);
+        String title = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Ingrese el autor del libro: " + ANSI_RESET);
+        String author = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Ingrese la descripción del libro: " + ANSI_RESET);
+        String description = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Ingrese ISBN del libro: " + ANSI_RESET);
+        String isbn = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Ingrese el género del libro: " + ANSI_RESET);
+        String genre = scanner.nextLine();
+        
+        Book book = new Book(title, author, description, isbn, genre);
+        bookController.createBook(book);
+    }
 
-   public void searchByGenre(String genreAnswer){
-   }
+    public void searchChoice(int searchAnswer) {
+        System.out.print(ANSI_CYAN + "Escribe la búsqueda: " + ANSI_RESET);
+        String query = scanner.nextLine();
+        
+        switch (searchAnswer) {
+            case 1:
+                bookController.findBookByTitle(query);
+                break;
+            case 2:
+                bookController.findBookByAuthor(query);
+                break;
+            case 3:
+                bookController.findBookByGenre(query);
+                break;
+            default:
+                System.out.println(ANSI_RED + "Error: Opción no válida" + ANSI_RESET);
+        }
+    }
 
-   public void updateBook(int idAnswer){  
-   }
-
-   public void editBook(){
-        Scanner scannerEdit = new Scanner(System.in);
+    public void editBook() {
         System.out.println("Lista actual de libros:");
         bookController.selectAllBooks();
-        System.out.println("Ingresa ID:");
-        int idAnswer = scannerEdit.nextInt();
-        scannerEdit.nextLine();
-        System.out.println("Nuevo título:");
-        String title = scannerEdit.nextLine();
-        System.out.println("Nuevo autor:");
-        String author = scannerEdit.nextLine();
-        System.out.println("Nueva descripción:");
-        String description = scannerEdit.nextLine();
-        System.out.println("Nuevo ISBN:");
-        String isbn = scannerEdit.nextLine();
-        System.out.println("Nuevo género:");
-        String genre = scannerEdit.nextLine();
+        System.out.print(ANSI_CYAN + "Ingresa ID del libro a modificar: " + ANSI_RESET);
+        int idAnswer = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Nuevo título: " + ANSI_RESET);
+        String title = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Nuevo autor: " + ANSI_RESET);
+        String author = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Nueva descripción: " + ANSI_RESET);
+        String description = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Nuevo ISBN: " + ANSI_RESET);
+        String isbn = scanner.nextLine();
+        System.out.print(ANSI_CYAN + "Nuevo género: " + ANSI_RESET);
+        String genre = scanner.nextLine();
+        
         Book updatedBook = new Book(title, author, description, isbn, genre);
         updatedBook.setId(idAnswer);
         bookController.updateBook(updatedBook);
-        scannerEdit.close();
-   }
+    }
 
-   public void deleteBook (){
-    Scanner scannerDelete = new Scanner(System.in);
-    System.out.println("Lista actual de libros:");
-    bookController.selectAllBooks();
-    System.out.println("Ingresa ID:");
-    int id = scannerDelete.nextInt();
-    bookController.removeBook (id);
-    scannerDelete.close();
-   }
+    public void deleteBook() {
+        System.out.println("Lista actual de libros:");
+        bookController.selectAllBooks();
+        System.out.print(ANSI_CYAN + "Ingresa ID del libro a eliminar: " + ANSI_RESET);
+        int id = scanner.nextInt();
+        bookController.removeBook(id);
+    }
 }
-
