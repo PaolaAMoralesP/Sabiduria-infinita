@@ -56,11 +56,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-        public String getGenre(){
+    public String getGenre(){
             return this.genre;
-        }
+    }
  
-        public void setGenre(String genre) {
+    public void setGenre(String genre) {
             this.genre = genre;
-        }
+    }
 }

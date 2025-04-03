@@ -44,7 +44,7 @@ public class BookDAO {
                 String author = result.getString("author");
                 String isbn = result.getString("isbn");
                 String genre = result.getString("genre");
-                System.out.printf("Book #%d: %s - %s - %s - %s%n", id, title, author,  isbn, genre);
+                System.out.printf("Book #%d: %s - %s - %s - %s%n", id, title, author, isbn, genre);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -86,7 +86,7 @@ public class BookDAO {
         return books;
     }
 
-        public List<Book> findBookByAuthor(String authorAnswer) {
+    public List<Book> findBookByAuthor(String authorAnswer) {
         List<Book> books = new ArrayList<>();
         try {
             connection = DBManager.initConnection();
@@ -116,7 +116,7 @@ public class BookDAO {
         } finally {
             DBManager.closeConnection();
         }
-        return books; 
+        return books;
     }
 
     public List<Book> findBookByGenre(String genreAnswer) {
@@ -149,10 +149,10 @@ public class BookDAO {
         } finally {
             DBManager.closeConnection();
         }
-        return books;    
+        return books;
     }
 
-    public void updateBook(Book book){
+    public void updateBook(Book book) {
         try {
             connection = DBManager.initConnection();
             String sql = "UPDATE books SET title = ?, author = ?, description = ?, isbn = ?, genre = ? WHERE id = ?";
@@ -162,21 +162,21 @@ public class BookDAO {
             pstmt.setString(3, book.getDescription());
             pstmt.setString(4, book.getIsbn());
             pstmt.setString(5, book.getGenre());
-            pstmt.setInt(6,book.getId());
+            pstmt.setInt(6, book.getId());
             int rowsUpdated = pstmt.executeUpdate();
             if (rowsUpdated > 0) {
-            System.out.println("✅ Libro actualizado con éxito.");
+                System.out.println("✅ Libro actualizado con éxito.");
             } else {
-            System.out.println("⚠️ No se encontró ningún libro con ese ID.");
+                System.out.println("⚠️ No se encontró ningún libro con ese ID.");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
             DBManager.closeConnection();
-        }  
-}
+        }
+    }
 
-public void removeBook(int id){
+    public void removeBook(int id) {
         try {
             connection = DBManager.initConnection();
             String sql = "DELETE FROM books WHERE id = ?";
@@ -195,9 +195,9 @@ public void removeBook(int id){
         }
     }
 
-public void editBook(int idAnswer){
+    public void editBook(int idAnswer) {
     }
 
-public void deleteBook(int idDelete) {
+    public void deleteBook(int idDelete) {
     }
 }
