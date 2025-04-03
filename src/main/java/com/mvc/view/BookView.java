@@ -3,7 +3,7 @@ package com.mvc.view;
 import java.util.Scanner;
 import com.mvc.controller.BookController;
 import com.mvc.model.Book;
-import static com.mvc.WelcomeLibrary.*; // Importando los colores
+import static com.mvc.WelcomeLibrary.*; 
 
 public class BookView {
     private BookController bookController;
@@ -21,8 +21,7 @@ public class BookView {
         System.out.print(ANSI_CYAN + "Escribe tu respuesta: " + ANSI_RESET);
         
         int answer = scanner.nextInt();
-        scanner.nextLine(); // Consumir nueva línea
-        
+        scanner.nextLine();
         switch (answer) {
             case 1:
                 System.out.println(ANSI_PURPLE + "\nHas elegido la opción 1: Crear libro" + ANSI_RESET);

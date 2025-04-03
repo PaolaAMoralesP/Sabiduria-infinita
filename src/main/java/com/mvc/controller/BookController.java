@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.mvc.model.Book;
 import com.mvc.model.BookDAO;
-//import com.mvc.view.BookView;
 
 public class BookController {
         BookDAO bookDAO;

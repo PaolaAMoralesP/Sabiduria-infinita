@@ -4,11 +4,6 @@ import com.mvc.controller.BookController;
 import com.mvc.model.BookDAO;
 import com.mvc.view.BookView;
 
-
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
